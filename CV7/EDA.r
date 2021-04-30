@@ -30,7 +30,7 @@ library(openxlsx)
 getwd()
 
 # Nastavení pracovního adresáře -> do uvozovek, celou cestu (relativní nebo absolutní)
-setwd("./data")
+setwd("./CV7/data")
 
 getwd() # kde jsme teď
 
@@ -203,7 +203,7 @@ head(pokus)
 # ** Základní převod jednoduché datové matice do standardního datového formátu  ####-
 # stack(...)
 
-
+data = read.csv2(file="http://am-nas.vsb.cz/lit40/DATA/aku.csv")
 data5 = data[,1:4] # z dat vybereme ty sloupce, které odpovídají měřením po 5 cyklech
 colnames(data5) = c("A","B","C","D") # přejmenujeme sloupce
 head(data5)
@@ -225,6 +225,7 @@ head(dataS)
 dataS = dataS[,-2] # vynecháme nadbytečný druhý sloupec
 dataS = na.omit(dataS) # vynecháme řádky s NA hodnotami
 head(dataS)
+tail(dataS)
 
 # **!!! S funkci na.omit zacházejte extrémně opatrně, aby jste nechtěně nepřišli o data
 # !!!**
@@ -343,10 +344,10 @@ dataS %>%
 # * Z dat ve formátu Datová matice ####
 
 
-data_DM = read_excel("./data/datova_matice.xlsx")
+data_DM = read.csv2(file="http://am-nas.vsb.cz/lit40/DATA/aku.csv")
 head(data_DM)
 
-data_DM = data_DM[,-1]
+#data_DM = data_DM[,-1]
 colnames(data_DM) = c("A22", "A5", "B22", "B5", "C22", "C5", "D22", "D5")
 head(data_DM)
 
@@ -374,7 +375,10 @@ data_DM_S=reshape(data=as.data.frame(data_DM),
                   v.names=c("5 C","22  C"),   
                   times=c("Amber","Bright","Clear","Dim"),  
                   timevar="vyrobce")
+row.names(data_DM_S) = 1:nrow(data_DM_S)
+data_DM_S = data_DM_S[-4]
 head(data_DM_S)
+tail(data_DM_S)
 
 help(reshape)
 
