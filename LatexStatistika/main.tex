@@ -50,9 +50,9 @@ Jméno cvičícího: Ing. Michal Béreš\\
         \hline
         & Datum odevzdání & Hodnocení \\
         \hline
-        Domácí úkol 1: & & \\
+        Domácí úkol 1: & 9. duben 2021 & 5/5 \\
         \hline
-        Domácí úkol 2: & & \\
+        Domácí úkol 2: & 30. duben 2021 & \\
         \hline
         Domácí úkol 3: & & \\
         \hline
@@ -116,7 +116,7 @@ Boxplot obsahuje odlehlá pozorování, ostatní grafy jsou bez odlehlých pozor
         \hline
         & 5°C             & 22°C             && 5°C                                    & 22°C                                    \\
         \hline
-        rozsah souboru           & 71,0                        & 71,0                         &  & 70,0                                   & 71,0                                    \\
+        rozsah souboru           & 71                          & 71                           &  & 70                                     & 71                                   \\
         minimum                  & 750,0                       & 755,8                        &  & 750,0                                  & 755,8                                   \\
         dolní kvartil            & 774,0                       & 774,0                        &  & 773,4                                  & 774,0                                   \\
         medián                   & 797,8                       & 801,9                        &  & 797,4                                  & 801,9                                   \\
@@ -134,7 +134,7 @@ Boxplot obsahuje odlehlá pozorování, ostatní grafy jsou bez odlehlých pozor
         dolní mez                & 707,6                       & 705,6                        &  & 706,6                                  & 705,6                                   \\
         horní mez                & 884,7                       & 888,0                        &  & 884,6                                  & 888,0                                   \\
         \hline
-        \end{tabular}
+    \end{tabular}
 \end{table}
 
 \newpage
@@ -217,5 +217,124 @@ lze předpokládat, že světelný tok zářivek výrobce Amber při teplotě 22
 lze tedy očekávat, že přibližně 95 \% zářivek bude mít světelný tok v rozmezí \textit{746,0} lm až \textit{849,2} lm.\\
 
 
+\newpage
+\section{Úkol 2S}
+Porovnejte pokles světelného toku po 30 sekundách od zapnutí při snížení okolní teploty z 22°C 
+na 5°C u zářivek od výrobců Amber a Bright. Nezapomeňte, že použité metody mohou vyžadovat 
+splnění určitých předpokladů. Pokud tomu tak bude, okomentujte splnění/nesplnění těchto předpokladů 
+jak na základě explorační analýzy (např. s odkazem na histogram apod.), tak exaktně pomocí metod statistické indukce.
+
+
+\subsection{}
+Graficky prezentujte srovnání poklesů světelného toku zářivek výrobců Amber a Bright 
+při snížení okolní teploty (vícenásobný krabicový graf, histogramy, q-q grafy). 
+Srovnání okomentujte (včetně informace o případné manipulaci sdatovým souborem).
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\textwidth]{Figures/Boxploty_2.png}
+	\caption[Boxploty světelnosti, Amber a Bright]{Boxploty světelnosti, Amber a Bright}
+	\label{fig:Boxplot2}
+\end{figure}
+
+U obou výrobců byly pozorovány 3 odlehlé pozorování (viz Obr. \ref{fig:Boxplot2}), tyto jsme se rozhodli z dálšího zpracování vypustit. 
+Podle vizualizace srovnání poklesů světelného toku zářivek výrobců Amber a Bright (viz Obr. \ref{fig:Boxplot2}), Obr. \ref{fig:QQaHist})) lze usoudit, že k výraznému poklesu 
+světelnéhu toku při snížení okolní teploty nedošlo.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\textwidth]{Figures/QQaHistogram.png}
+	\caption[Histogramy a Q-Q grafy světelnosti]{Histogramy a Q-Q grafy světelnosti, Amber a Bright, odstraněná pozorování}
+	\label{fig:QQaHist}
+\end{figure}
+
+
+\newpage
+\subsection{}
+Na hladině významnosti 5 \% rozhodněte, zda jsou střední poklesy (popř. mediány poklesů) 
+světelného tokuzářivek výrobců Amber a Bright statisticky významné. 
+K řešení využijte bodové a intervalové odhady i testování hypotéz. Výsledky okomentujte.
+
+Dle prezentovaných Q-Q grafů (viz Obr. \ref{fig:QQaHist}) lze usuzovat, že poklesy světelného toku zářivek u výrobce Amber i výrobce Bright 
+lze modelovat normálním rozdělením. Šikmost i špičatost (viz Tab. \ref{tab:normSymet}) odpovídají normálnímu rozdělení.
+
+\begin{table}[H]
+	\centering
+	\caption{Ověření normality poklesu světelného toku zářivek}
+	\label{tab:normSymet}
+    \begin{tabular}{c|c|c|c}
+        & šikmost & stand. špičatost & \begin{tabular}[c]{@{}c@{}}Shapirův-Wilkův test\\ (p-hodnota)\end{tabular}  \\
+        \hline
+        výrobce Amber  & 0.12    & -0.35            & 0.87                                                         \\
+        \hline
+        výrobce Bright & -0.13   & 0.05             & 0.65                                                         \\
+    \end{tabular}
+\end{table}
+
+Dle Shapirova-Wilkova testu lze na hladině významnosti 0,05 pokles světelného toku zářivek 
+u výrobce Amber i u výrobe Bright modelovat normálním rozdělením (viz Tab. \ref{tab:normSymet}).
+
+Rozdělení poklesů světelných toků zářivek lze u výrobce Amber i u výrobce Bright považovat za 
+symetrické. (viz šikmosti, výsledky testu symetrie (Tab. \ref{tab:normSymet}) a tvar histogramů (Obr. \ref{fig:QQaHist})), 
+proto lze pro intervalové odhady a test významnosti mediánu v případě obou výrobců použít Wilcoxonovu testovou statistiku.
+
+Vzhledem k tomu, že očekáváme kladné poklesy kapacit (s klesající teplotou se 
+světelný tok zářivek snižuje), volíme levostranné intervalové odhady / levostranné testy.
+
+U zářivek výrobce Amber lze očekávat, že polovina bude vykazovat pokles světelného toku menší než cca 1.67 lm. 
+95\% levostranný intervalový odhad mediánu poklesu světelného toku zářivek výrobce Amber je (14.9;$\infty$) lm.
+Intervalový odhad, stejně jako p-hodnota Wilcoxonova testu, ukazují, že medián poklesu kapacit je statisticky významně větší než nula. 
+Tj. na hladině významnosti 0,05 lze pokles světelného toku žárovek výrobce Amber považovat za statisticky významný (viz Tab. \ref{tab:medianWilc}). 
+
+U zářivek výrobce Bright lze očekávat, že polovina bude vykazovat pokles světelného toku menší než cca 0.27 lm. 
+95\% levostranný intervalový odhad mediánu poklesu světelného toku zářivek výrobce Bright je (14.3;$\infty$) lm.
+Intervalový odhad, stejně jako p-hodnota Wilcoxonova testu, ukazují, že medián poklesu kapacit je statisticky významně větší než nula. 
+Tj. na hladině významnosti 0,05 nelze pokles světelného toku žárovek výrobce Bright považovat za statisticky významný (viz Tab. \ref{tab:medianWilc}). 
+
+\begin{table}[H]
+	\centering
+	\caption{Odhad mediánu a test významnosti poklesu světelných toků zářivek (lm) dle výrobce}
+	\label{tab:medianWilc}
+    \begin{tabular}{c|c|c|c}
+        & \begin{tabular}[c]{@{}c@{}}bodový odhad\\ (lm)\end{tabular} & \begin{tabular}[c]{@{}c@{}}95\% levostranný\\ intervalový odhad\\ (lm)\end{tabular} & \begin{tabular}[c]{@{}c@{}}Studentů \\ levostranný t-test\\ (p-hodnota)\end{tabular} \\
+        \hline
+        výrobce Amber  & 1.67                                                        & 14.9                                                                                & \textless{}0.001                                                     \\
+        \hline
+        výrobce Bright & 0.27                                                        & 14.3                                                                                & 0.31                                                                 \\
+    \end{tabular}
+\end{table}
+
+
+\newpage
+\subsection{}
+Na hladině významnosti 5\% rozhodněte, zda je rozdíl středních hodnot (mediánů) 
+poklesů světelných toků zářivek výrobců Amber a Bright (při snížení okolní teploty) statisticky významný.
+K řešení využijte bodový a intervalový odhad i čistý test významnosti. Výsledky okomentujte.
+
+Vzhledem k potvrzení normality u výrobce Amber i Bright je třeba zjistit zda mezi rozptyly výrobců panuje shoda.
+
+Na základě výsledku F-testu (viz Tab. \ref{tab:medianStudent}) lze rozhodnout o shodě rozptylů (homoskedasticitě) a použít 
+Dvouvýběrový Studentův t-test pro test stř. hodnot.
+
+U zářivek výrobce Amber lze očekávat pokles ve světelném toku o cca 1.4 lm větší než u výrobce Bright. 
+Odpovídající 95\% levostranný intervalový odhad tohoto rozdílu je (0.69;$\infty$) lm.
+Intervalový odhad, stejně jako Dvouvýběrový Studentův t-test (viz Tab. \ref{tab:medianStudent}) ukazují, že medián 
+poklesu světelného toku zářivek výrobce Amber není statistiky významně vyšší než u výrobce Bright.
+
+\begin{table}[H]
+	\centering
+	\caption{Srovnání mediánu poklesu světelných toků zářivek (lm) výrobce Amber a Bright}
+	\label{tab:medianStudent}
+    \begin{tabular}{c|c}
+        Bodový odhad $X_{0.5}^A$ - $X_{0.5}^B$ (lm)                                   & 1.40        \\
+        \hline
+        F-test (p-hodnota)                                                    & 0.44        \\
+        \hline
+        95\% levostranný intervalový odhad $X_{0.5}^A$ - $X_{0.5}^B$ (lm)     & (0.69;$\infty$)  \\
+        \hline
+        Dvouvýběrový Studentův t-test (p-hodnota)                             & 0.5         \\
+    \end{tabular}
+\end{table}
 
 \end{document}
+

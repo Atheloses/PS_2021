@@ -39,7 +39,7 @@
 # * Intervalový odhad a hladina významnosti ####
 
 
-data = readxl::read_excel("data/uvod.xlsx")
+data = readxl::read_excel("D:/_VSB/S8/PS/Beres/GitPS/CV10/data/uvod.xlsx")
 head(data)
 
 options(repr.plot.width = 12) # šířka grafů v Jupyteru
@@ -266,7 +266,7 @@ binom.test(x = x, n = n, p = 0.2, alternative = 'less')$p.value
 
 
 # Načtení dat z xlsx souboru (pomoci balíčku readxl)
-albumin = readxl::read_excel("data/testy_jednovyberove.xlsx",
+albumin = readxl::read_excel("D:/_VSB/S8/PS/Beres/GitPS/CV10/data/testy_jednovyberove.xlsx",
                              sheet = "bilk_serum")
 head(albumin)
 
@@ -320,7 +320,7 @@ t.test(albumin$hodnoty, mu=35, alternative = "two.sided")
 
 
 # Načtení dat z xlsx souboru (pomoci balíčku readxl)
-preziti = readxl::read_excel("data/testy_jednovyberove.xlsx",
+preziti = readxl::read_excel("D:/_VSB/S8/PS/Beres/GitPS/CV10/data/testy_jednovyberove.xlsx",
                              sheet = "preziti")   
 head(preziti)
 
@@ -335,7 +335,6 @@ hist(preziti$hodnoty)
 # **Data obsahují OP -> můžeme je odstranit. Nebo si také všimnout, že se pravděpdobně
 # jedná o exponenciální rozdělení a OP tam ve skutečnosti nejsou (rozdělení se tak
 # prostě chová).**
-
 
 # Data obsahují odlehlá pozorování. Pomoci f-ce boxplot je umíme vypsat.
 pom=boxplot(preziti$hodnoty, plot = FALSE)
@@ -435,7 +434,7 @@ p.hodnota
 
 
 # Načtení dat z xlsx souboru (pomoci balíčku readxl)
-krouzky = readxl::read_excel("data/testy_jednovyberove.xlsx",
+krouzky = readxl::read_excel("D:/_VSB/S8/PS/Beres/GitPS/CV10/data/testy_jednovyberove.xlsx",
                              sheet = "krouzky")  
 head(krouzky)
 
@@ -485,7 +484,7 @@ EnvStats::varTest(krouzky$hodnoty.bez, sigma.squared = 0.05^2,
 # p-value < 0.05 -> Na hladině významnosti 0,05 zamítáme H0 ve prospěch Ha 
 
 # Jak najít 95% intervalový odhad směrodatné odchylky?
-pom = EnvStats::varTest(krouzky$hodnoty.bez,sigma.squared = 0.05^2,
+pom = EnvStats::varTest(krouzky$hodnoty.bez, sigma.squared = 0.05^2,
                         alternative = "less", conf.level=0.95)
 
 sqrt(pom$conf.int)

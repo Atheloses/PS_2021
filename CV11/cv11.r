@@ -231,9 +231,8 @@ prop.test(x = c(x1, x2), n = c(n1, n2), alternative="less",
 # hypotézu, zda se hladina cholesterolu v krvi starších mužů neliší od hladiny
 # cholesterolu v krvi mladších mužů.
 
-
 # Načtení dat
-chol = readxl::read_excel("data/testy_dvouvyberove.xlsx",
+chol = readxl::read_excel("./CV11/data/testy_dvouvyberove.xlsx",
                   sheet = "cholesterol2",
                   skip = 1)   
 colnames(chol)=c("mladsi","starsi")

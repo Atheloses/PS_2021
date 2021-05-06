@@ -7,6 +7,8 @@ library(moments)
 
 getwd()
 
+par(mfrow = c(1, 1))   
+
 # Načtení dat z xlsx souboru
 data_xlsx = read_excel("./1S/ukol_123.xlsx", 
                   sheet = "Vysledky mereni",      
