@@ -72,10 +72,6 @@ data_B_d_bezOP[data_B_d_bezOP %in% boxplot(data_B_d, plot = FALSE)$out] = NA
 sd(data_A_d_bezOP, na.rm=TRUE)
 sd(data_B_d_bezOP, na.rm=TRUE)
 
-mean(data_A_d_bezOP, na.rm=TRUE)
-mean(data_B_d_bezOP, na.rm=TRUE)
-
-
 par(mfrow = c(1, 1))   
 
 boxplot(data_A_d, data_B_d, names=c("Amber","Bright"), ylab="pokles světelného toku (lm)", main="Boxploty světelnosti")
@@ -126,8 +122,8 @@ lawstat::symmetry.test(data_B_d_bezOP, boot=FALSE)$p.value
 mean(data_A_d_bezOP, na.rm=T)
 mean(data_B_d_bezOP, na.rm=T)
 
-EnvStats::varTest(data_A_d_bezOP, conf.level = 0.95, alternative = "greater")
-EnvStats::varTest(data_B_d_bezOP, conf.level = 0.95, alternative = "greater")
+t.test(data_A_d_bezOP, conf.level = 0.95, alternative = "greater")$conf.int
+t.test(data_B_d_bezOP, conf.level = 0.95, alternative = "greater")$conf.int
 
 t.test(data_A_d_bezOP, alternative="greater", conf.level=0.95)$p.value
 t.test(data_B_d_bezOP, alternative="greater", conf.level=0.95)$p.value
@@ -138,8 +134,14 @@ var(data_B_d_bezOP,na.rm=T)
 
 prumer = mean(data_A_d_bezOP, na.rm=T) - mean(data_B_d_bezOP, na.rm=T)
 
-var.test(x = data_A_d_bezOP, y = data_B_d_bezOP, ratio = 1, conf.level = 0.95)
+# F-Test
+var.test(x = data_A_d_bezOP, y = data_B_d_bezOP, ratio = 1, conf.level = 0.95, alternative = "two.sided")$p.value
 
-t.test(x = data_A_d_bezOP, y = data_B_d_bezOP, mu = prumer, alternative = "greater",
-       var.equal = TRUE, conf.level = 0.95)$p.value
+# 95% oboustranný interval
+t.test(x = data_A_d_bezOP, y = data_B_d_bezOP, mu = prumer, conf.level = 0.95, alternative = "two.sided")$conf.int
 
+# Dvouvýběrový studentův T-test (p-hodnota)
+t.test(x = data_A_d_bezOP, y = data_B_d_bezOP, mu = prumer, conf.level = 0.95, alternative = "two.sided")$p.value
+
+# medián x0,1 - median()
+# stř.hodnota je mean() - průměr

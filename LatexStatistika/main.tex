@@ -52,9 +52,9 @@ Jméno cvičícího: Ing. Michal Béreš\\
         \hline
         Domácí úkol 1: & 9. duben 2021 & 5/5 \\
         \hline
-        Domácí úkol 2: & 30. duben 2021 & \\
+        Domácí úkol 2: & 30. duben 2021 & 2.5/5\\
         \hline
-        Domácí úkol 3: & & \\
+        Domácí úkol 3: & 7. května 2021 & \\
         \hline
         Domácí úkol 4: & & \\
         \hline
@@ -238,14 +238,14 @@ Srovnání okomentujte (včetně informace o případné manipulaci sdatovým so
 \end{figure}
 
 U obou výrobců byly pozorovány 3 odlehlé pozorování (viz Obr. \ref{fig:Boxplot2}), tyto jsme se rozhodli z dálšího zpracování vypustit. 
-Podle vizualizace srovnání poklesů světelného toku zářivek výrobců Amber a Bright (viz Obr. \ref{fig:Boxplot2}), Obr. \ref{fig:QQaHist})) lze usoudit, že k výraznému poklesu 
+Podle vizualizace srovnání poklesů světelného toku zářivek výrobců Amber a Bright (viz Obr. \ref{fig:Boxplot2}), Obr. \ref{fig:QQaHist_2})) lze usoudit, že k výraznému poklesu 
 světelnéhu toku při snížení okolní teploty nedošlo.
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.9\textwidth]{Figures/QQaHistogram.png}
+	\includegraphics[width=0.9\textwidth]{Figures/QQaHistogram_2.png}
 	\caption[Histogramy a Q-Q grafy světelnosti]{Histogramy a Q-Q grafy světelnosti, Amber a Bright, odstraněná pozorování}
-	\label{fig:QQaHist}
+	\label{fig:QQaHist_2}
 \end{figure}
 
 
@@ -255,52 +255,52 @@ Na hladině významnosti 5 \% rozhodněte, zda jsou střední poklesy (popř. me
 světelného tokuzářivek výrobců Amber a Bright statisticky významné. 
 K řešení využijte bodové a intervalové odhady i testování hypotéz. Výsledky okomentujte.
 
-Dle prezentovaných Q-Q grafů (viz Obr. \ref{fig:QQaHist}) lze usuzovat, že poklesy světelného toku zářivek u výrobce Amber i výrobce Bright 
-lze modelovat normálním rozdělením. Šikmost i špičatost (viz Tab. \ref{tab:normSymet}) odpovídají normálnímu rozdělení.
+Dle prezentovaných Q-Q grafů (viz Obr. \ref{fig:QQaHist_2}) lze usuzovat, že poklesy světelného toku zářivek u výrobce Amber i výrobce Bright 
+lze modelovat normálním rozdělením. Šikmost i špičatost (viz Tab. \ref{tab:normSymet_2}) odpovídají normálnímu rozdělení.
 
 \begin{table}[H]
 	\centering
 	\caption{Ověření normality poklesu světelného toku zářivek}
-	\label{tab:normSymet}
-    \begin{tabular}{c|c|c|c}
-        & šikmost & stand. špičatost & \begin{tabular}[c]{@{}c@{}}Shapirův-Wilkův test\\ (p-hodnota)\end{tabular}  \\
+	\label{tab:normSymet_2}
+    \begin{tabular}{c|c|c|c|c}
+        & šikmost & stand. špičatost & \begin{tabular}[c]{@{}c@{}}Shapirův-Wilkův test\\ (p-hodnota)\end{tabular} & \begin{tabular}[c]{@{}c@{}}Test symetrie \\(p-hodnota)\end{tabular} \\
         \hline
-        výrobce Amber  & 0.12    & -0.35            & 0.87                                                         \\
+        výrobce Amber  & 0,1    & -0,4            & 0,872                                                       & 0,681 \\
         \hline
-        výrobce Bright & -0.13   & 0.05             & 0.65                                                         \\
+        výrobce Bright & -0,1   & 0,1             & 0,646                                                       & 0,110 \\
     \end{tabular}
 \end{table}
 
 Dle Shapirova-Wilkova testu lze na hladině významnosti 0,05 pokles světelného toku zářivek 
-u výrobce Amber i u výrobe Bright modelovat normálním rozdělením (viz Tab. \ref{tab:normSymet}).
+u výrobce Amber i u výrobe Bright modelovat normálním rozdělením (viz Tab. \ref{tab:normSymet_2}).
 
 Rozdělení poklesů světelných toků zářivek lze u výrobce Amber i u výrobce Bright považovat za 
-symetrické. (viz šikmosti, výsledky testu symetrie (Tab. \ref{tab:normSymet}) a tvar histogramů (Obr. \ref{fig:QQaHist})), 
-proto lze pro intervalové odhady a test významnosti mediánu v případě obou výrobců použít Wilcoxonovu testovou statistiku.
+symetrické. (viz šikmosti, výsledky testu symetrie (Tab. \ref{tab:normSymet_2}) a tvar histogramů (Obr. \ref{fig:QQaHist_2})), 
+proto lze pro intervalové odhady a test významnosti stř. hodnot v případě obou výrobců použít Studentův t-test.
 
-Vzhledem k tomu, že očekáváme kladné poklesy kapacit (s klesající teplotou se 
+Vzhledem k tomu, že očekáváme poklesy světelností (s klesající teplotou se 
 světelný tok zářivek snižuje), volíme levostranné intervalové odhady / levostranné testy.
 
 U zářivek výrobce Amber lze očekávat, že polovina bude vykazovat pokles světelného toku menší než cca 1.67 lm. 
-95\% levostranný intervalový odhad mediánu poklesu světelného toku zářivek výrobce Amber je (14.9;$\infty$) lm.
-Intervalový odhad, stejně jako p-hodnota Wilcoxonova testu, ukazují, že medián poklesu kapacit je statisticky významně větší než nula. 
-Tj. na hladině významnosti 0,05 lze pokles světelného toku žárovek výrobce Amber považovat za statisticky významný (viz Tab. \ref{tab:medianWilc}). 
+95\% levostranný intervalový odhad stř. hodnot poklesu světelného toku zářivek výrobce Amber je (0,78;$\infty$) lm.
+Intervalový odhad, stejně jako p-hodnota, ukazují, že stř. hodnota poklesu světelnosti je statisticky významně větší než nula. 
+Tj. na hladině významnosti 0,05 lze pokles světelného toku žárovek výrobce Amber považovat za statisticky významný (viz Tab. \ref{tab:odhady}). 
 
 U zářivek výrobce Bright lze očekávat, že polovina bude vykazovat pokles světelného toku menší než cca 0.27 lm. 
-95\% levostranný intervalový odhad mediánu poklesu světelného toku zářivek výrobce Bright je (14.3;$\infty$) lm.
-Intervalový odhad, stejně jako p-hodnota Wilcoxonova testu, ukazují, že medián poklesu kapacit je statisticky významně větší než nula. 
-Tj. na hladině významnosti 0,05 nelze pokles světelného toku žárovek výrobce Bright považovat za statisticky významný (viz Tab. \ref{tab:medianWilc}). 
+95\% levostranný intervalový odhad stř. hodnot poklesu světelného toku zářivek výrobce Bright je (-0,62;$\infty$) lm.
+Intervalový odhad, stejně jako p-hodnota, ukazují, že stř. hodnota poklesu světelnosti je statisticky významně větší než nula. 
+Tj. na hladině významnosti 0,05 nelze pokles světelného toku žárovek výrobce Bright považovat za statisticky významný (viz Tab. \ref{tab:odhady}). 
 
 \begin{table}[H]
 	\centering
-	\caption{Odhad mediánu a test významnosti poklesu světelných toků zářivek (lm) dle výrobce}
-	\label{tab:medianWilc}
+	\caption{Odhad stř. hodnoty a test významnosti poklesu světelných toků zářivek (lm) dle výrobce}
+	\label{tab:odhady}
     \begin{tabular}{c|c|c|c}
-        & \begin{tabular}[c]{@{}c@{}}bodový odhad\\ (lm)\end{tabular} & \begin{tabular}[c]{@{}c@{}}95\% levostranný\\ intervalový odhad\\ (lm)\end{tabular} & \begin{tabular}[c]{@{}c@{}}Studentů \\ levostranný t-test\\ (p-hodnota)\end{tabular} \\
+        & \begin{tabular}[c]{@{}c@{}}bodový odhad\\ (lm)\end{tabular} & \begin{tabular}[c]{@{}c@{}}95\% levostranný\\ intervalový odhad\\ (lm)\end{tabular} & \begin{tabular}[c]{@{}c@{}}Studentův \\ levostranný t-test\\ (p-hodnota)\end{tabular} \\
         \hline
-        výrobce Amber  & 1.67                                                        & 14.9                                                                                & \textless{}0.001                                                     \\
+        výrobce Amber  & 1,67                                                        & (0,78;$\infty$)                                                                                & 0,001                                                     \\
         \hline
-        výrobce Bright & 0.27                                                        & 14.3                                                                                & 0.31                                                                 \\
+        výrobce Bright & 0,27                                                        & (-0,62;$\infty$)                                                                               & 0,308                                                                 \\
     \end{tabular}
 \end{table}
 
@@ -313,28 +313,207 @@ K řešení využijte bodový a intervalový odhad i čistý test významnosti. 
 
 Vzhledem k potvrzení normality u výrobce Amber i Bright je třeba zjistit zda mezi rozptyly výrobců panuje shoda.
 
-Na základě výsledku F-testu (viz Tab. \ref{tab:medianStudent}) lze rozhodnout o shodě rozptylů (homoskedasticitě) a použít 
+Na základě výsledku F-testu (viz Tab. \ref{tab:dvouvyberTest}) lze rozhodnout o shodě rozptylů (homoskedasticitě) a použít 
 Dvouvýběrový Studentův t-test pro test stř. hodnot.
 
-U zářivek výrobce Amber lze očekávat pokles ve světelném toku o cca 1.4 lm větší než u výrobce Bright. 
-Odpovídající 95\% levostranný intervalový odhad tohoto rozdílu je (0.69;$\infty$) lm.
-Intervalový odhad, stejně jako Dvouvýběrový Studentův t-test (viz Tab. \ref{tab:medianStudent}) ukazují, že medián 
+U zářivek výrobce Amber lze očekávat pokles ve světelném toku o cca 1,4 lm větší než u výrobce Bright. 
+Odpovídající 95\% levostranný intervalový odhad tohoto rozdílu je (0,63;1,68) lm.
+Intervalový odhad, stejně jako Dvouvýběrový Studentův t-test (viz Tab. \ref{tab:dvouvyberTest}) ukazují, že stř. hodnota 
 poklesu světelného toku zářivek výrobce Amber není statistiky významně vyšší než u výrobce Bright.
 
 \begin{table}[H]
 	\centering
-	\caption{Srovnání mediánu poklesu světelných toků zářivek (lm) výrobce Amber a Bright}
-	\label{tab:medianStudent}
+	\caption{Srovnání středních hodnot poklesu světelných toků zářivek (lm) výrobce Amber a Bright}
+	\label{tab:dvouvyberTest}
     \begin{tabular}{c|c}
-        Bodový odhad $X_{0.5}^A$ - $X_{0.5}^B$ (lm)                                   & 1.40        \\
+        Bodový odhad $\mu^A$ - $\mu^B$ (lm)                                   & 1,40        \\
         \hline
-        F-test (p-hodnota)                                                    & 0.44        \\
+        F-test (p-hodnota)                                                    & 0,889        \\
         \hline
-        95\% levostranný intervalový odhad $X_{0.5}^A$ - $X_{0.5}^B$ (lm)     & (0.69;$\infty$)  \\
+        95\% oboustranný intervalový odhad $\mu^A$ - $\mu^B$ (lm)             & (-0,08;2,88)  \\
         \hline
-        Dvouvýběrový Studentův t-test (p-hodnota)                             & 0.5         \\
+        Dvouvýběrový Studentův t-test (p-hodnota)                             & 1,000         \\
     \end{tabular}
 \end{table}
+
+\newpage
+\section{Úkol 3S}
+Na hladině významnosti 5 \% rozhodněte, zda se světelný tok zářivek při teplotě 5 °C liší 
+v závislosti na tom, od kterého výrobce pocházejí. 
+Posouzení proveďte nejprve na základě explorační analýzy a následně pomocí 
+vhodného statistického testu, včetně ověření potřebných předpokladů. 
+V případě, že se světelný tok zářivek jednotlivých výrobců statisticky významně liší, 
+určete pořadí výrobců dle středního světelného toku (popř. mediánu světelného toku) zářivek při 5°C.
+
+% A)
+\subsection{}
+a)	Daný problém vhodným způsobem graficky prezentujte (vícenásobný krabicový graf, histogramy, q-q grafy). 
+Srovnání okomentujte (včetně informace o případné manipulaci s datovým souborem).
+
+U všech výrobců byla pozorována odlehlá pozorování, celkem 6 (viz Obr. \ref{fig:Boxplot3}), která byla z dalšího zpracování odstraněna.
+Z histogramů a Q-Q grafů (viz Obr. \ref{fig:QQaHist_3}) nelze, mezi výrobci, pozorovat významné rozdíly mezi světelnostmi jejich zářivek.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\textwidth]{Figures/Boxploty_3.png}
+	\caption{Boxploty světelnosti při 5°C. Výrobce Amber, Bright, Clear a Dim}
+	\label{fig:Boxplot3}
+\end{figure}
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\textwidth]{Figures/QQaHistogram_3.png}
+	\caption{Histogramy a Q-Q grafy světelnosti při 5°C. Výrobci Amber, Bright, Clear a Dim, odstraněná pozorování}
+	\label{fig:QQaHist_3}
+\end{figure}
+
+
+% B)
+\newpage
+\subsection{}
+Ověřte normalitu a symetrii světelného toku zářivek při teplotě 5°C u všech čtyř výrobců (empiricky i exaktně).
+
+Podle prezentovaných grafů (viz Obr. \ref{fig:QQaHist_3}) nelze usuzovat, že světelný tok při 5 stupních je normálním rozdělením.
+
+Šikmost i špičatost (viz Tab. \ref{tab:normSymet_3}) normálnímu rozdělení odpovídá, 
+ale Shapirův-Wilkův test normalitu zamítl u všech výrobců s vyjímkou Bright.
+
+Podle tvaru histogramů (viz Obr. \ref{fig:QQaHist_3}), výsledků šikmostí a výsledků testu 
+symetrie (viz Tab. \ref{tab:normSymet_3}) lze u všech výrobců světelnost zářivek při 5°C považovat za symetrickou.
+
+\begin{table}[H]
+	\centering
+	\caption{Srovnání normality a symetrie poklesu světelného toku zářivek, podle výrobce}
+	\label{tab:normSymet_3}
+    \begin{tabular}{c|c|c|c|c}
+        Výrobce & Šikmost & Špičatost & \begin{tabular}[c]{@{}c@{}}Shapirův-Wilkův test \\ (p-hodnota)\end{tabular} & \begin{tabular}[c]{@{}c@{}}Test symetrie \\ (p-hodnota)\end{tabular} \\
+        \hline
+        Amber   & 0,3     & 0,0       & 0,009                                                                       & 0,477                     \\
+        \hline
+        Bright  & -0,1    & -1,0      & 0,079                                                                       & 0,448                     \\
+        \hline
+        Clear   & -0,3    & -0,3      & 0,005                                                                       & 0,638                     \\
+        \hline
+        Dim     & 0,1     & -1,1      & 0,031                                                                       & 0,823                     \\
+    \end{tabular}
+\end{table}
+
+% C)
+\newpage
+\subsection{}
+Ověřte homoskedasticitu (shodu rozptylů) světelného toku zářivek při teplotě 5 °C jednotlivých výrobců (empiricky i exaktně).
+
+Podle Obr. \ref{fig:QQaHist_3} a poměru největšího a nejmenšího rozptylu světelností 
+(viz Tab. \ref{tab:rozptyl_3}), $S_{A}^2/S_{D}^2 = 1,23$, se zdá, že srovnávané rozptyly lze považovat za srovnatelné.
+
+Na základě Leveneho testu (p-hodnota = 0,781) nezamítáme předpoklad o shodě rozptylů.
+
+\begin{table}[H]
+	\centering
+	\caption{Srovnání rozptylů světelnosti zářivek při 5°C, podle výrobce}
+	\label{tab:rozptyl_3}
+    \begin{tabular}{c|c}
+        Výrobce & Rozptyl \\
+        \hline
+        Amber   & 694,9   \\
+        \hline
+        Bright  & 684,3   \\
+        \hline
+        Clear   & 582,5   \\
+        \hline
+        Dim     & 564,8   \\
+    \end{tabular}
+\end{table}
+
+
+% D)
+\newpage
+\subsection{}
+Určete bodové a 95\% intervalové odhady střední hodnoty (popř. mediánu) 
+světelného toku zářivek při teplotě 5°C pro všechny srovnávané výrobce. 
+(Nezapomeňte na ověření předpokladů pro použití příslušných intervalových odhadů.)
+
+Předpoklad o symetrii rozdělení nelze zamítnout (viz Tab. \ref{tab:normSymet_3}).
+Vzhledem k zamítnutí předpokladu o normálním rozdělení je pro srovnání mediánu použit Kruskalův-Wallisův test.
+
+Pro výpočet bodového odhadu jsou použity mediány a pro výpočet 95\% intervalového odhadu Wilcoxnův test.
+
+\begin{table}[H]
+	\centering
+	\caption{Odhad mediánů světelnosti zářivek při 5°C, podle výrobce}
+	\label{tab:mediany_3}
+    \begin{tabular}{c|c|c}
+        Výrobce & Bodový odhad (lm) & 95\% intervalový odhad (lm) \\
+        \hline
+        Amber   & 797,4             & (789,1 ; 801,5)             \\
+        \hline
+        Bright  & 814,2             & (805,5 ; 819,5)             \\
+        \hline
+        Clear   & 792,2             & (787,6 ; 799,6)             \\
+        \hline
+        Dim     & 790,0             & (783,3 ; 795,3)             \\
+    \end{tabular}
+\end{table}
+
+Medián světelnosti zářivek výrobce Amber očekáváme při teplotě 5 °C na cca 797,4 lm. 
+95\% intervalový odhad tohoto mediánu je (789,1 ; 801,5) lm. Výsledky výrobců Bright, Clear a Dim
+lze interpretovat obdobně. Výrobce Bright poskytuje při 5°C vyšší světelnost o přibližně 20 lumenů než ostatní výrobci.
+Výrobci Amber, Clear a Dim se v tomto parametru liší v řádu jednotek lumenů.
+
+% E)
+\newpage
+\subsection{}
+Čistým testem významnosti ověřte, zda je pozorovaný rozdíl středních hodnot 
+(popř. mediánů) světelného toku zářivek při teplotě 5°C statisticky významný 
+na hladině významnosti 5 \%. Pokud ano, zjistěte, zda lze některé skupiny výrobců 
+označit (z hlediska světelného toku zářivek po 30 sekundách od zapnutí, při teplotě 5°C) 
+za homogenní, tj. určete pořadí výrobců dle středních hodnot (popř. mediánů) 
+světelného toku zářivek při 5°C. (Nezapomeňte na ověření předpokladů pro použití zvoleného testu.)
+
+Na hladině významnosti 0,05 zamítám hypotézu o shodě mediánů (Kruskalův-Wallisův test, p-hodnota \textless{}\textless{}0,001), 
+tj. mediány světelnosti při teplotě 5°C se významně liší mezi výrobci.
+
+\begin{table}[H]
+	\centering
+	\caption{Dunnová post hoc analýza}
+	\label{tab:dunn_3}
+    \begin{tabular}{c|c|c|c|c}
+        Výrobce & Amber & Bright    & Clear & Dim                           \\
+        \hline
+        Amber   & x     & 0,002     & 1,000 & 1,000                         \\
+        \hline
+        Bright  &       & x         & 0,001 & \textless{}\textless{}0,001   \\
+        \hline
+        Clear   &       &           & x     & 1,000                         \\
+        \hline
+        Dim     &       &           &       & x                             \\
+    \end{tabular}
+\end{table}
+
+Dle Dunnové (varianta bonferroni) post hoc analýzy (viz Tab. \ref{tab:dunn_3}) můžeme konstatovat, 
+že světelnost při 5°C se statistiky významně liší mezi podskupinami a(Bright) a b(Amber, Clear, Dim). 
+
+Tab. \ref{tab:efekty_3} znázorňuje setřízení efektů podle výrobců a jejich rozdělení do podskupin.
+V podskupině b(Amber, Clear, Dim) není statisticky významný rozdíl ve světelnosti zářivek při 5°C.
+
+\begin{table}[H]
+	\centering
+	\caption{Efekt, setřízení a rozdělení do podskupin}
+	\label{tab:efekty_3}
+    \begin{tabular}{c|c|c|c|c|c}
+        Výrobce & Efekt &   &   &   &   \\
+        \hline
+        Bright  & 15.6  & a &   &   &   \\
+        \hline
+        Amber   & -1.2  &   & b &   &   \\
+        \hline
+        Clear   & -6.4  &   & b & c &   \\
+        \hline
+        Dim     & -8.6  &   & b & c & d \\
+    \end{tabular}
+\end{table}
+
 
 \end{document}
 

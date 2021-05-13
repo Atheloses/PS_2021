@@ -227,7 +227,7 @@ efekt
 # významné, tj. zda existuje vliv složení směsi na sledovaný parametr.
 
 
-kysel = readxl::read_excel("data/testy_vicevyberove.xlsx", sheet=1)
+kysel = readxl::read_excel("./CV12/data/testy_vicevyberove.xlsx", sheet=1)
 colnames(kysel) = c("sk1","sk2","sk3")   # přejmenování sloupců
 kysel
 
@@ -316,7 +316,7 @@ efekty %>% arrange(desc(efekt))
 # hmotnostech králíků. Ověřte.
 
 
-kralici = readxl::read_excel("data/testy_vicevyberove.xlsx", sheet=2)
+kralici = readxl::read_excel("./CV12/data/testy_vicevyberove.xlsx", sheet=2)
 colnames(kralici) = c("viden","cesky","kalif")   # přejmenování sloupců
 kralici
 
@@ -407,7 +407,7 @@ efekty %>% arrange(desc(efekt))
 # má vliv na jeho jakost.
 
 
-jakost.s = readxl::read_excel("data/testy_vicevyberove.xlsx", sheet = 3)
+jakost.s = readxl::read_excel("./CV12/data/testy_vicevyberove.xlsx", sheet = 3)
 colnames(jakost.s) = c("poradi", "skupina")   # přejmenování sloupců
 head(jakost.s)
 # data již jsou v standardním formátu
@@ -460,7 +460,7 @@ kruskal.test(jakost.s$poradi ~ jakost.s$skupina)
 # preparát?
 
 
-trombin.s = readxl::read_excel("data/testy_vicevyberove.xlsx", 
+trombin.s = readxl::read_excel("./CV12/data/testy_vicevyberove.xlsx", 
                                sheet=4, skip = 1)
 colnames(trombin.s) = c("hodnoty","skupina")   # přejmenování sloupců
 
@@ -551,7 +551,7 @@ efekty %>% arrange(desc(efekt))
 # zlata, pokud ano sestave homogenní skupiny z hlediska vytěženého zlata.
 
 
-zlato = readxl::read_excel("data/snehurka.xlsx")
+zlato = readxl::read_excel("./CV12/data/snehurka.xlsx")
 head(zlato)
 # data jsou ve standardním dtovém formátu
 
