@@ -87,3 +87,5 @@ tmp/
 .working/CV13/.cv13.autosave.xopp
 
 CV13/.ipynb_checkpoints/
+
+*/NOGIT_*

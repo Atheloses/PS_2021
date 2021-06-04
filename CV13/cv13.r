@@ -305,7 +305,7 @@ shapiro.test(dalnice$hodnoty)
 # Cramerovo V.
 
 
-tet = readxl::read_excel("data/neparametricke_hypotezy.xlsx", sheet=3)
+tet = readxl::read_excel("./CV13/data/neparametricke_hypotezy.xlsx", sheet=3)
 head(tet)
 
 tet = tet[,c(6,10)]

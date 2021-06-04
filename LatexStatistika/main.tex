@@ -54,9 +54,9 @@ Jméno cvičícího: Ing. Michal Béreš\\
         \hline
         Domácí úkol 2: & 30. duben 2021 & 2.5/5\\
         \hline
-        Domácí úkol 3: & 7. května 2021 & \\
+        Domácí úkol 3: & 7. května 2021 & 5/5\\
         \hline
-        Domácí úkol 4: & & \\
+        Domácí úkol 4: & 14. května 2021& \\
         \hline
         Celkem: & & \\
         \hline
@@ -225,6 +225,7 @@ splnění určitých předpokladů. Pokud tomu tak bude, okomentujte splnění/n
 jak na základě explorační analýzy (např. s odkazem na histogram apod.), tak exaktně pomocí metod statistické indukce.
 
 
+% A)
 \subsection{}
 Graficky prezentujte srovnání poklesů světelného toku zářivek výrobců Amber a Bright 
 při snížení okolní teploty (vícenásobný krabicový graf, histogramy, q-q grafy). 
@@ -249,6 +250,7 @@ světelnéhu toku při snížení okolní teploty nedošlo.
 \end{figure}
 
 
+% B)
 \newpage
 \subsection{}
 Na hladině významnosti 5 \% rozhodněte, zda jsou střední poklesy (popř. mediány poklesů) 
@@ -281,12 +283,12 @@ proto lze pro intervalové odhady a test významnosti stř. hodnot v případě 
 Vzhledem k tomu, že očekáváme poklesy světelností (s klesající teplotou se 
 světelný tok zářivek snižuje), volíme levostranné intervalové odhady / levostranné testy.
 
-U zářivek výrobce Amber lze očekávat, že polovina bude vykazovat pokles světelného toku menší než cca 1.67 lm. 
+Střední hodnotu poklesu světelnosti zářivek výrobce Bright očekáváme při teplotě 5 °C na cca 1,67 lm. 
 95\% levostranný intervalový odhad stř. hodnot poklesu světelného toku zářivek výrobce Amber je (0,78;$\infty$) lm.
 Intervalový odhad, stejně jako p-hodnota, ukazují, že stř. hodnota poklesu světelnosti je statisticky významně větší než nula. 
 Tj. na hladině významnosti 0,05 lze pokles světelného toku žárovek výrobce Amber považovat za statisticky významný (viz Tab. \ref{tab:odhady}). 
 
-U zářivek výrobce Bright lze očekávat, že polovina bude vykazovat pokles světelného toku menší než cca 0.27 lm. 
+Střední hodnotu poklesu světelnosti zářivek výrobce Bright očekáváme při teplotě 5 °C na cca 0,27 lm. 
 95\% levostranný intervalový odhad stř. hodnot poklesu světelného toku zářivek výrobce Bright je (-0,62;$\infty$) lm.
 Intervalový odhad, stejně jako p-hodnota, ukazují, že stř. hodnota poklesu světelnosti je statisticky významně větší než nula. 
 Tj. na hladině významnosti 0,05 nelze pokles světelného toku žárovek výrobce Bright považovat za statisticky významný (viz Tab. \ref{tab:odhady}). 
@@ -305,6 +307,7 @@ Tj. na hladině významnosti 0,05 nelze pokles světelného toku žárovek výro
 \end{table}
 
 
+% C)
 \newpage
 \subsection{}
 Na hladině významnosti 5\% rozhodněte, zda je rozdíl středních hodnot (mediánů) 
@@ -347,7 +350,7 @@ určete pořadí výrobců dle středního světelného toku (popř. mediánu sv
 
 % A)
 \subsection{}
-a)	Daný problém vhodným způsobem graficky prezentujte (vícenásobný krabicový graf, histogramy, q-q grafy). 
+Daný problém vhodným způsobem graficky prezentujte (vícenásobný krabicový graf, histogramy, q-q grafy). 
 Srovnání okomentujte (včetně informace o případné manipulaci s datovým souborem).
 
 U všech výrobců byla pozorována odlehlá pozorování, celkem 6 (viz Obr. \ref{fig:Boxplot3}), která byla z dalšího zpracování odstraněna.
@@ -456,6 +459,7 @@ Pro výpočet bodového odhadu jsou použity mediány a pro výpočet 95\% inter
     \end{tabular}
 \end{table}
 
+% u mediánu lze napsat, že očekáváme polovinu hodnot menších než 797,4..
 Medián světelnosti zářivek výrobce Amber očekáváme při teplotě 5 °C na cca 797,4 lm. 
 95\% intervalový odhad tohoto mediánu je (789,1 ; 801,5) lm. Výsledky výrobců Bright, Clear a Dim
 lze interpretovat obdobně. Výrobce Bright poskytuje při 5°C vyšší světelnost o přibližně 20 lumenů než ostatní výrobci.
@@ -513,6 +517,124 @@ V podskupině b(Amber, Clear, Dim) není statisticky významný rozdíl ve svět
         Dim     & -8.6  &   & b & c & d \\
     \end{tabular}
 \end{table}
+
+
+\newpage
+\section{Úkol 4S}
+Všichni čtyři výrobci udávají, že jejich zářivky dosáhnou při 5°C po 30 sekundách 
+od zapnutí alespoň osmdesáti procent deklarovaného maximálního světelného toku (tj. 80 
+\% z 1 000 lm). Definujte si novou dichotomickou proměnnou Splnění požadavku na deklarovaný 
+světelný tok po 30 s (při 5°C), která bude nabývat hodnot {ANO, NE}. 
+Poznámka: Pracujte s původními daty, nikoliv s daty po odstranění odlehlých pozorování.
+
+
+% A)
+\subsection{}
+Srovnejte zářivky jednotlivých výrobců dle toho, zda při teplotě 5°C splňují deklarovaný 
+světelný tok po 30 s od zapnutí pro jednotlivé výrobce (Amber, Bright, Clear, Dim). 
+Výsledky prezentujte pomocí kontingenční tabulky, vhodného grafu a vhodné míry kontingence. 
+Vaše úsudky komentujte.
+
+Do analýzy bylo zařazeno 71 (25,45 \%) zářivek výrobce Amber. 
+Světelnosti alespoň 80 \% po 30 sekundách při teplotě 5°C vykazovalo 34 (47,89 \%) 
+zářivek výrobce Amber (viz Tab. \ref{tab:svetelnost_4}, Obr. \ref{fig:Mosaic_4}). 
+Dosažení světelnosti výrobců Bright, Clear a Dim lze interpretovat obdobně.
+Zářivky výrobce Bright se jeví jako nejkvalitnější.
+Na základě Obr. \ref{fig:Mosaic_4} a Cramerova V (0,221) lze závislost 
+mezi dosažením 80\% světelnosti a výrobcem zářivek hodnotit jako středně slabou.
+
+\begin{table}[H]
+	\centering
+	\caption{Srovnání dosažení 80\% světelnosti při 5°C, podle výrobce}
+	\label{tab:svetelnost_4}
+    \begin{tabular}{c|c|c|c}
+        výrobce\textbackslash dosažení 80\% světelnosti & ANO               & NE               & Celkem                 \\
+        \hline
+        Amber                                           & 34   (47,89 \%)   & 37   (52,11 \%)  & 71      (25,45 \%)     \\
+        \hline
+        Bright                                          & 45   (65,22 \%)   & 24   (34,78 \%)  & 69      (24,73 \%)     \\
+        \hline
+        Clear                                           & 28   (43,08 \%)   & 37   (56,92 \%)  & 65      (23,30 \%)     \\
+        \hline
+        Dim                                             & 26   (35,14 \%)   & 48   (64,86 \%)  & 74      (26,52 \%)     \\
+        \hline
+        Celkem                                          & 133  (47,67 \%)   & 146  (52,33 \%)  & 279     (100,00 \%)    \\
+    \end{tabular}
+\end{table}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.6\textwidth]{Figures/Mosaic_4.png}
+	\caption{Mozaikový graf dosažení 80\% světelnosti při 5°C, podle výrobce}
+	\label{fig:Mosaic_4}
+\end{figure}
+
+
+% B)
+\newpage
+\subsection{}
+V případě výrobce Bright určete bodový i 95\% intervalový odhad pravděpodobnosti, 
+že při teplotě 5°C zářivka nedosáhne po 30 sekundách požadovaného světelného toku 
+(80 \% deklarovaného maximálního světelného toku). 
+Nezapomeňte na ověření předpokladů pro použití intervalového odhadu.
+
+K nedosažení 80\% světelnosti u výrobce Bright došlo ve 24 (34,78 \%) případech.
+Clopperův-Pearsonův intervalový odhad této pravděpodobnosti je (23,98;47,29) \%.
+Předpoklad pro použití intervalového odhadu byly splněny ($9/(0,3478*0,6522)$ = 39,67 \textless{} 69)
+
+
+% C)
+\newpage
+\subsection{}
+Určete bodový i 95\% intervalový odhad relativního rizika, 
+že zářivka při teplotě 5°C nedosáhne po 30 sekundách požadovaného světelného toku 
+(80 \% deklarovaného maximálního světelného toku), pro „nejhoršího“ 
+výrobce (vzhledem k „nejlepšímu“ výrobci). Výsledky slovně interpretujte.
+
+Nejlepším výrobcem byl určen Bright a nejhorším Dim.
+U výrobce Dim lze očekávat 1,86 krát vyšší riziko na nedosáhnutí 
+80\% světelnosti zářivek než u výrobce Bright.
+Dle 95\% intervalového odhadu lze toto relativní riziko očekávat v rozmezí (1,29;2,69).
+Na základě intervalového odhadu lze konstatovat, že na hladině významnosti 0,05 lze 
+vliv výrobce na výskyt nedosažení 80\% světelnosti považovat za závislý.
+
+
+% D)
+\newpage
+\subsection{}
+Určete bodový i 95\% intervalový odhad poměru šancí, 
+že zářivka při teplotě 5°C nedosáhne po 30 sekundách požadovaného světelného toku 
+(80 \% deklarovaného maximálního světelného toku), pro „nejhoršího“ výrobce 
+
+(vzhledem k „nejlepšímu“ výrobci). Výsledky slovně interpretujte.
+
+Nejlepší výrobce Bright má šanci na nedosažení 80\% světelnosti 533:1000, 
+tj. na 1533 zářivek výrobce Bright lze očekávat 533 zářivek se světelností menší, než 80 \%.
+
+Nejhorší výrobce Dim má šanci na nedosažení 80\% světelnosti 1846:1000, 
+tj. na 2846 zářivek výrobce Bright lze očekávat 1846 zářivek se světelností menší, než 80 \%.
+
+Z výše uvedeného je zřejmé, že u výrobce Dim je šance na menší než 80\% světelnost 3,46 krát vyšší
+než u výrobce Bright. Dle 95\% intervalového odhadu lze tento poměr šancí očekávat v rozmezí
+(1,73;6,89). Na základě intervalového odhadu lze konstatovat, že na hladině významnosti 0,05 lze
+vliv výrobce na výskyt nedosažení požadovaného světelného toku považovat za závislý.
+
+
+% E)
+\newpage
+\subsection{}
+Pomocí chí-kvadrát testu nezávislosti rozhodněte, jestli to, 
+že zářivka při teplotě 5°C nedosáhne po 30 sekundách požadovaného světelného toku 
+(80 \% deklarovaného maximálního světelného toku), závisí statisticky významně 
+na tom, od kterého výrobce zářivka pochází. Výsledky okomentujte.
+
+Všechny očekávané četnosti jsou větší než 5, tj. pro ověření, 
+zda po 30 sekundách zářivky nedosáhnou 80\% světelnosti při teplotě 5°C, 
+statistiky významně závisí na tom, od kterého výrobce zářivky pochází, lze použít
+$\chi^2$ test nezávislosti.
+
+Výsledek $\chi^2$ testu nezávislosti (p-hodnota = 0,003) vypovídá o staticky významné 
+závislosti mezi výrobcem zářivek a jejich schopností dosáhnout 80\% světelnosti.
 
 
 \end{document}

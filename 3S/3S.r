@@ -12,17 +12,11 @@ data_xlsx = data_xlsx[,-1] # odstraníme první sloupec s indexy
 colnames(data_xlsx)=c("A22","A5","B22","B5","C22","C5","D22","D5") 
 head(data_xlsx)
 
-data_xlsx$A_d = data_xlsx$A22-data_xlsx$A5
-data_xlsx$B_d = data_xlsx$B22-data_xlsx$B5
-data_xlsx$C_d = data_xlsx$C22-data_xlsx$C5
-data_xlsx$D_d = data_xlsx$D22-data_xlsx$D5
-
 data=reshape(data=as.data.frame(data_xlsx),
                   direction="long",
                   varying=list(c("A5", "B5", "C5", "D5"),
-                               c("A22","B22","C22","D22"),
-                               c("A_d","B_d","C_d","D_d")),
-                  v.names=c("C5","C22","delta"),   
+                               c("A22","B22","C22","D22")),
+                  v.names=c("C5","C22"),   
                   times=c("Amber","Bright","Clear","Dim"),  
                   timevar="vyrobce")
 row.names(data) = 1:nrow(data)
